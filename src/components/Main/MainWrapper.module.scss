@@ -1,0 +1,14 @@
+@use '../../styles/variables';
+
+
+/* 
+    Wrapper component
+        Unit capped to desktop and centered
+*/
+.mainWrapper {
+    width: 100%;
+    max-width: variables.$DesktopScreen;
+    margin: 0 auto;
+    margin-top: 5rem;
+    padding: 0px 30px;
+}

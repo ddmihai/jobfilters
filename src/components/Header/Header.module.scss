@@ -1,4 +1,4 @@
-@use '../../app.scss';
+@use '../../styles/variables';
 
 /* 
     Header component
@@ -6,7 +6,7 @@
         * Use nesting images to stile
 */
 .header {
-    background: app.$DesaturatedDarkCyan;
+    background: variables.$DesaturatedDarkCyan;
     width: 100%;
     height: 130px;
     
@@ -19,7 +19,7 @@
 
 
 
-@media only screen and (max-width: app.$MobileScreen) {
+@media only screen and (max-width: variables.$MobileScreen) {
     .header {
         & .headerImgDesktop {
             display: none;
@@ -27,7 +27,7 @@
     }
 };
 
-@media only screen and (min-width: app.$MobileScreen) {
+@media only screen and (min-width: variables.$MobileScreen) {
     .header {
         & .headerImgMobile {
             display: none;

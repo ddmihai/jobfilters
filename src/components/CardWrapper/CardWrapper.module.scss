@@ -1,0 +1,96 @@
+@use '../../styles/variables';
+
+
+.figureJobCard {
+    background-color: white;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+
+    // shadow
+    box-shadow: 5px 5px 40px variables.$DesaturatedDarkCyan;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        max-height: inherit;
+        width: 5px;
+        background-color: variables.$DesaturatedDarkCyan;
+    };
+
+    & img {
+        margin-left: 25px;
+        align-self: center;
+    }
+}
+
+
+// Secondary wrapper
+.secondatyWrapper {
+    border: 2px solid blue;
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+};
+
+
+.detailsWrapper {
+    border: 3px solid black;
+    flex: 1;
+    margin-left: 15px;
+
+    // manageable
+    & .wrapperTitle {
+        display: flex;  
+        font-weight: bold;
+        color: variables.$DesaturatedDarkCyan;
+        gap: 10px;
+
+
+        & .companyTitle {
+            
+        };
+
+        & .companyTag {
+            background: variables.$VeryDarkGrayishCyan;
+            color: white;
+        };
+
+        & .companyNew {
+            color: white;
+            background: variables.$DesaturatedDarkCyan;
+
+        };
+
+    }
+}
+
+
+// tech wrapper
+// TODO: MODIFY LATER
+.texhnologiesWrapper {
+    border: 2px solid red;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px;
+    padding: 10px;
+
+    & p {
+        color: variables.$DesaturatedDarkCyan;
+        background-color: variables.$LightGrayishCyan;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+}
