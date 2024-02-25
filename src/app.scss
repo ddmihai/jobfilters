@@ -1,0 +1,39 @@
+// Font import
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+
+// resets
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 15px;
+
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+
+
+/* 
+    Variables
+        1. Primary
+        2. Background
+        3. Filter Tablets
+*/
+$DesaturatedDarkCyan: hsl(180, 29%, 50%);
+
+$LightGrayishCyan: hsl(180, 52%, 96%);
+$LightGrayishCyan:  hsl(180, 31%, 95%);
+$DarkGrayishCyan: hsl(180, 8%, 52%);
+$VeryDarkGrayishCyan: hsl(180, 14%, 20%);
+
+
+/* 
+    Breakepoints
+*/
+$MobileScreen: '375px';
+$DesktopScreen: '1440px';
+
+
