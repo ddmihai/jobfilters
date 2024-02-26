@@ -5,10 +5,11 @@
     background-color: white;
     border-radius: 10px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 30px auto;
     position: relative;
     padding: 20px 0;
     display: flex;
+    flex-wrap: wrap;
 
     // shadow
     box-shadow: 5px 5px 40px variables.$DesaturatedDarkCyan;
@@ -34,17 +35,19 @@
 
 // Secondary wrapper
 .secondatyWrapper {
-    border: 2px solid blue;
     flex: 1;
     display: flex;
     flex-wrap: wrap;
 };
 
 
+
+
+
 .detailsWrapper {
-    border: 3px solid black;
     flex: 1;
     margin-left: 15px;
+
 
     // manageable
     & .wrapperTitle {
@@ -52,21 +55,22 @@
         font-weight: bold;
         color: variables.$DesaturatedDarkCyan;
         gap: 10px;
-
-
-        & .companyTitle {
-            
-        };
+        align-items: center;
+        flex-wrap: wrap;
+        flex: 1 1 400px;
 
         & .companyTag {
             background: variables.$VeryDarkGrayishCyan;
             color: white;
+            padding: 5px 12px;
+            border-radius: 20px
         };
 
         & .companyNew {
             color: white;
             background: variables.$DesaturatedDarkCyan;
-
+            padding: 5px 12px;
+            border-radius: 20px
         };
 
     }
@@ -76,9 +80,10 @@
 // tech wrapper
 // TODO: MODIFY LATER
 .texhnologiesWrapper {
-    border: 2px solid red;
     flex: 1;
     display: flex;
+    flex-basis: 400px;
+
     align-items: center;
     justify-content: end;
     flex-wrap: wrap;
@@ -94,3 +99,35 @@
         font-weight: bold;
     }
 }
+
+
+@media only screen and (max-width: 550px) {
+    .figureJobCard {
+        flex-direction: column;
+        margin-top: 60px;
+        padding-bottom: 0;
+        padding: 20px 15px 20px 0;
+
+        & img {
+            margin-top: -54px;
+            align-self: baseline;
+        }
+    };
+
+    .secondatyWrapper {
+        margin: 15px 15px 0 15px;
+        
+    };
+
+    .detailsWrapper {
+        margin-bottom: 10px;
+    }
+
+    .texhnologiesWrapper {
+        justify-content: start;
+        border-top: 1px solid variables.$DarkGrayishCyan;
+        margin: 0;
+        padding-top: 10px;
+
+    }
+};

@@ -9,7 +9,7 @@ const MainWrapper = () => {
     return (
       <section className={styles.mainWrapper}>
         {
-            jobs.map((item, index) => (
+            jobs?.map((item, index) => (
                 <CardWrapper key={index} company={item} />
             ))
         }
