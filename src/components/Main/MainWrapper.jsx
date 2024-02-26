@@ -4,8 +4,9 @@ import styles from './MainWrapper.module.scss';
 // Data import
 import jobs from '../../assets/data/data.json';
 
-
 const MainWrapper = () => {
+
+
     return (
       <section className={styles.mainWrapper}>
         {

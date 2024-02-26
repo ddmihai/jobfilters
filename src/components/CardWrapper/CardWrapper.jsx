@@ -1,14 +1,31 @@
 import styles from './CardWrapper.module.scss';
 import myHome from '../../assets/images/myhome.svg';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
+// import image from '../../assets/images/the-air-filter-company.svg'
 
 const CardWrapper = ({ company }) => {
-    const pathToAsset = '../../assets/';
-    console.log(`${pathToAsset}${company.logo}`)
+    
+    const [imageSrc, setImageSrc] = useState(null);
+
+    useEffect(() => {
+        const loadImage = async () => {
+            try {
+                const dynamicImage = await /* @vite-ignore */ import(`../../assets/images/${company.logo}`);
+                setImageSrc(dynamicImage.default);
+            } catch (error) {
+                console.error('Error loading image:', error);
+            }
+        };
+
+        loadImage();
+    }, [company.logo]);
 
     return (
         <figure className={styles.figureJobCard}>
-            <img src={`http://localhost:5173/assets/images/the-air-filter-company.svg`} alt='company svg' width={70} height={70} /> 
+            {imageSrc && <img src={imageSrc} alt='company svg' width={70} height={70} />}
+
             
             {/* Wrapper job description and technologies tab */}
             <aside className={styles.secondatyWrapper}>
