@@ -77,6 +77,29 @@
 }
 
 
+
+/*POSITION DETAILS*/
+.positionDetails {
+    & .companyPositionTitle {
+        color: variables.$VeryDarkGrayishCyan;
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin: 15px 0px;
+    }
+
+    & ul {
+        color: variables.$DarkGrayishCyan;
+        display: flex;
+        flex-wrap: wrap;
+        list-style-position: inside;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
 // tech wrapper
 // TODO: MODIFY LATER
 .texhnologiesWrapper {
