@@ -28,9 +28,14 @@ const CardWrapper = ({ company, setConditions }) => {
     useEffect(() => {
         const loadImage = async () => {
             try {
-                // Dynamically import the image
-                const { default: dynamicImage } = await import( /* @vite-ignore */ `../../jobfilters/assets/images/${company.logo}`);
-                setImageSrc(dynamicImage);
+                const baseUrl = import.meta.env.BASE_URL; // Get the base URL from Vite
+                const imagePath = `${baseUrl}assets/images/${company.logo}`;
+                const response = await fetch(imagePath);
+                if (response.ok) {
+                    setImageSrc(imagePath);
+                } else {
+                    throw new Error('Failed to load image');
+                }
             } catch (error) {
                 console.error('Error loading image:', error);
             }
