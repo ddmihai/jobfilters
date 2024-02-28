@@ -28,10 +28,9 @@ const CardWrapper = ({ company, setConditions }) => {
     useEffect(() => {
         const loadImage = async () => {
             try {
-                const dynamicImage = await
-                import(/* @vite-ignore */ `../../assets/images/${company.logo}`);
-
-                setImageSrc(dynamicImage.default);
+                // Dynamically import the image
+                const { default: dynamicImage } = await import( /* @vite-ignore */ `../../assets/images/${company.logo}`);
+                setImageSrc(dynamicImage);
             } catch (error) {
                 console.error('Error loading image:', error);
             }

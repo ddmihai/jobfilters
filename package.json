@@ -11,7 +11,7 @@
     "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build && npm run copy-assets",
-    "preview": "vite preview"
+    "preview": "vite preview --port 3000"
   },
   "dependencies": {
     "gh-pages": "^6.1.1",
