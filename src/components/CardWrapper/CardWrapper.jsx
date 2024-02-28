@@ -4,17 +4,21 @@ import { useEffect } from 'react';
 
 // import image from '../../assets/images/the-air-filter-company.svg'
 
-const CardWrapper = ({ company }) => {
+const CardWrapper = ({ company, setConditions }) => {
     
     const [imageSrc, setImageSrc] = useState(null);
 
+
     // Map over technologies
     const mapOvertechnologies = (array) => {
-        return array?.map((company, index) => <p key={index}>{ company }</p>);
+        return array?.map((company, index) => <p 
+        onClick={() => setConditions(conditions => [...conditions, company])}
+        key={index}>{ company }</p>);
     }
 
-    const renderedTechnologies = mapOvertechnologies(company.languages, 'languages');
-    const renderedTools = mapOvertechnologies(company.tools, 'tools');
+    // map ovet the texh and languages props
+    const renderedTechnologies  = mapOvertechnologies(company.languages, 'languages');
+    const renderedTools         = mapOvertechnologies(company.tools, 'tools');
 
 
     /**
@@ -36,6 +40,9 @@ const CardWrapper = ({ company }) => {
         loadImage();
     }, [company.logo]);
 
+
+
+    
 
 
     return (
@@ -69,8 +76,8 @@ const CardWrapper = ({ company }) => {
                 <article className={styles.texhnologiesWrapper}>
                     { renderedTechnologies }
                     { renderedTools }
-                    <p>{ company.role }</p>
-                    <p>{ company.level }</p>
+                    <p onClick={() => setConditions(conditions => [...conditions, company.role])}>{ company.role }</p>
+                    <p onClick={() => setConditions(conditions => [...conditions, company.level])}>{ company.level }</p>
                 </article>
             </aside>
         </figure>

@@ -1,6 +1,7 @@
 @use '../../styles/variables';
 @use '../../styles/mixins';
 
+
 .figureJobCard {
     background-color: white;
     border-radius: 10px;
@@ -109,11 +110,18 @@
     padding: 10px;
 
     & p {
-        color: variables.$DesaturatedDarkCyan;
-        background-color: variables.$LightGrayishCyan;
+        color:              variables.$DesaturatedDarkCyan;
+        background-color:   variables.$LightGrayishCyan;
         padding: 8px 15px;
         border-radius: 5px;
         font-weight: bold;
+    }
+
+    & p:hover {
+        color:              variables.$LightGrayishCyan;
+        background-color:   variables.$DesaturatedDarkCyan;
+        transition:         ease-in .3s;
+        cursor:             pointer;
     }
 }
 
