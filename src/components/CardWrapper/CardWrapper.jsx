@@ -1,5 +1,4 @@
 import styles from './CardWrapper.module.scss';
-import myHome from '../../assets/images/myhome.svg';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
@@ -10,7 +9,7 @@ const CardWrapper = ({ company }) => {
     const [imageSrc, setImageSrc] = useState(null);
 
     // Map over technologies
-    const mapOvertechnologies = (array, field) => {
+    const mapOvertechnologies = (array) => {
         return array?.map((company, index) => <p key={index}>{ company }</p>);
     }
 
@@ -18,12 +17,16 @@ const CardWrapper = ({ company }) => {
     const renderedTools = mapOvertechnologies(company.tools, 'tools');
 
 
-    
+    /**
+     *      Load Images dynamically
+    //  *          
+    */
     useEffect(() => {
         const loadImage = async () => {
             try {
-                /* @vite-ignore */
-                const dynamicImage = await import(`../../assets/images/${company.logo}`);
+                const dynamicImage = await
+                import(/* @vite-ignore */ `../../assets/images/${company.logo}`);
+
                 setImageSrc(dynamicImage.default);
             } catch (error) {
                 console.error('Error loading image:', error);

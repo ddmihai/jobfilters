@@ -1,5 +1,5 @@
 @use '../../styles/variables';
-
+@use '../../styles/mixins';
 
 .figureJobCard {
     background-color: white;
@@ -60,17 +60,11 @@
         flex: 1 1 400px;
 
         & .companyTag {
-            background: variables.$VeryDarkGrayishCyan;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px
+            @include mixins.companyTagMixins(variables.$VeryDarkGrayishCyan, white);
         };
 
         & .companyNew {
-            color: white;
-            background: variables.$DesaturatedDarkCyan;
-            padding: 5px 12px;
-            border-radius: 20px
+            @include mixins.companyTagMixins(variables.$DesaturatedDarkCyan, white);
         };
 
     }

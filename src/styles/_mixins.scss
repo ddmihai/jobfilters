@@ -1,0 +1,6 @@
+@mixin companyTagMixins($bg-color, $text-color) {
+    color:  $text-color;
+    background: $bg-color;
+    padding: 5px 12px;
+    border-radius: 20px
+}
