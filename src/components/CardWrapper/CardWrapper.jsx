@@ -29,7 +29,7 @@ const CardWrapper = ({ company, setConditions }) => {
         const loadImage = async () => {
             try {
                 // Dynamically import the image
-                const { default: dynamicImage } = await import( /* @vite-ignore */ `../../assets/images/${company.logo}`);
+                const { default: dynamicImage } = await import( /* @vite-ignore */ `../../jobfilters/assets/images/${company.logo}`);
                 setImageSrc(dynamicImage);
             } catch (error) {
                 console.error('Error loading image:', error);
